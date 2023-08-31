@@ -1,0 +1,14 @@
+.mt-2 {
+    margin-top: 20px;
+}
+
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &.column {
+        flex-direction: column;
+    }
+}
