@@ -80,8 +80,17 @@ export default class PrintDemo extends Component {
                 
             </>
         ); */
-        return (
+        /* return (
             <div>{getValuesInString(data)}</div>
+        ) */
+        return (
+            <ul>
+                {
+                    ['JS', 'CSS', 'HTML'].map((value, idx) => {
+                        return <li key={idx}>{value}</li>
+                    })
+                }
+            </ul>
         )
     }
 }
