@@ -3,30 +3,28 @@ import './App.scss';
 import Input from './common/Elements/Input';
 import Button from './common/Elements/Button';
 import Select from './common/Elements/Select';
-import Section from './common/Elements/Section';
-import StateDemo from './Demo/StateDemo';
-import ClickEvent from './Demo/ClickEvent';
-import ChangeEvent from './Demo/ChangeEvent';
+import Form from './common/Elements/Form';
+
+const fontSizeTypes = ['px', 'em', 'rem'];
 
 class App extends React.Component {
+  
   render() {
     return (
       <main className='wrapper flex-center column'>
-        <ChangeEvent />
-        {/* <ClickEvent /> */}
-        {/* <StateDemo /> */}
-        {/* <PrintDemo /> */}
-        {/* <Section
-          type="html"
-          className="form-group flex-center column"
-        />
-        <section className='form-group flex-center column'>
+        <Form className="form-group flex-center column">
           <div className='input-group'>
-            <Input />
-            <Select />
+            {/* <Input placeholder="Enter your email" type="email" />
+            <Input placeholder="Enter password" type="password" /> */}
+            <Input
+              type="text"
+              placeholder="Enter a value"
+              numberOnly
+            />
+            <Select options={fontSizeTypes} />
           </div>
-          <Button />
-        </section> */}
+          <Button className="action-btn mt-2">Convert</Button>
+        </Form>
       </main>
     )
   }

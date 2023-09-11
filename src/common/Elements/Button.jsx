@@ -2,9 +2,10 @@ import React from "react";
 
 export default class Button extends React.Component {
     render() {
+        const { className, children } = this.props;
         return (
-            <div className='action-btn mt-2'>
-                <button className='btn'>Convert</button>
+            <div className={className}>
+                <button className='btn'>{children}</button>
             </div>
         )
     }
