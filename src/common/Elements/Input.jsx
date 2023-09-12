@@ -1,16 +1,13 @@
 import React from 'react';
 
 const regexMap = {
-    numberOnly: /^\d+$/g,
+    numberOnly: /^[0-9]*$/,
     alphabetOnly: /^[a-zA-Z]+$/ig,
     alphaNumericOnly: /^[a-z0-9]+$/ig
 }
 export default class Input extends React.Component {
     constructor() {
         super();
-        this.state = {
-            value: ''
-        }
         this.handleChange = this.handleChange.bind(this);
     }
     handleChange(event) {
@@ -19,17 +16,15 @@ export default class Input extends React.Component {
         if(value && regex && !regex.test(value)) {
             return false;
         }
-        this.setState({ value: event.target.value });
+        this.props.onInput(value);
     }
     render() {
-        // console.log(this.props)
-        // const placeholer = this.props.placeholer;
-        const { placeholder, type } = this.props;
+        const { placeholder, type, value } = this.props;
         return (
             <input
                 type={type}
                 placeholder={placeholder}
-                value={this.state.value}
+                value={value}
                 onChange={this.handleChange}
             />
         )

@@ -18,9 +18,9 @@ function getValuesInString(data) {
     const values = Object.values(data);
     let strArray = [];
     values.forEach(v => {
-        if(Object.prototype.toString.call(v) == '[object Array]') {
+        if(Object.prototype.toString.call(v) === '[object Array]') {
             strArray = strArray.concat(getValuesInString(v));
-        } else if(Object.prototype.toString.call(v) == '[object Object]') {
+        } else if(Object.prototype.toString.call(v) === '[object Object]') {
             strArray = strArray.concat(null);
         } else {
             strArray = strArray.concat(v);
