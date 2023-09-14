@@ -4,6 +4,8 @@ import Input from './common/Elements/Input';
 import Button from './common/Elements/Button';
 import Select from './common/Elements/Select';
 import Form from './common/Elements/Form';
+import Lifecycles from './Demo/Lifecycles';
+import ErrorHandling from './Demo/ErrorHandling';
 
 const sameBehaviourType = ['em', 'rem'];
 const fontSizeTypes = ['px', ...sameBehaviourType];
@@ -50,8 +52,11 @@ class App extends React.Component {
     this.setState({ result });
   }
   render() {
+    const str = {};
     return (
       <main className='wrapper flex-center column'>
+        <ErrorHandling string={str} />
+        <Lifecycles value={10} />
         <Form className="form-group flex-center column">
           <div className='input-group'>
             {/* <Input placeholder="Enter your email" type="email" />
